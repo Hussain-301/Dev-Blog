@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="shortcut icon" href="<%= icon_path %>" type="image/x-icon">
+    <title>Dev Blog</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <div class="creating-new-article">
+        <h2>Edit an article</h2>
+        <form action="/editAnArticle/<%= article.id %>?_method=PATCH" method="POST" class="createNewArticleForm" enctype="multipart/form-data">
+            <input type="file" name="img_url" id="img_url"   accept="image/png, image/jpeg, image/jpg">
+            <label for="img_url" class="upload-btn">Update your image</label>
+            <p class="file-name" id="file-name">Your Old Image: </p>
+            <img src="<%= article.img_url %>" alt="" width="200px" loading="lazy">
+    
+            <label for="title">Your article's title: </label>
+            <input type="text" name="title" placeholder="Enter the article's title:" autocomplete="off" value="<%= article.title %>" maxlength="25">
+    
+            <label for="description">Your article's description: </label>
+            <input type="text" name="description" placeholder="Enter the article's description:" autocomplete="off" value="<%= article.description %>">
+    
+            <label for="author">Your name please: </label>
+            <input type="text" name="author" placeholder="Enter your name:" autocomplete="off" value="<%= article.author %>">
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>    
+    <%- include('../partials/footer.ejs') %>
+    <script>document.getElementById('img_url').addEventListener('change', function() {
+        let fileName = this.files[0] ? this.files[0].name : "No file chosen";
+        document.getElementById('file-name').textContent = fileName;
+    });
+    </script>
+</body>
+</html>

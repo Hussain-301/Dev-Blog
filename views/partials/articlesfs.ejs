@@ -1,0 +1,16 @@
+
+    
+<div class="articles-fs-container">
+    <div class="articles-fs-btns">
+        <a href="/articles" class="articles-fs-btn"><button class="articles-fs-btn">View Articles</button></a>
+        <a href="/articles/edit/<%= article.id %>" class="articles-fs-btn"><button class="articles-fs-btn">Edit</button></a>
+        <form action="/deleteAnArticle/<%= article.id %>?_method=DELETE" method="POST" style="display:flex; align-items: center;">
+            <a class="articles-fs-btn" ><button class="articles-fs-btn" type="submit">Delete</button></a>
+        </form>
+    
+    </div>
+    <img src="<%= article.img_url %>" alt="<%= article.title %> image" loading="lazy">
+
+    <h2><%= article.title %></h2>
+    <p><%= article.description %></p>
+</div>

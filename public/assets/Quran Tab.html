@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)chrome-extension://afaihcdgkjebgabomemccdneglknjkdd/index.html -->
+<html lang="en" class="js-focus-visible" data-js-focus-visible="" data-theme="dark" style="color-scheme: dark;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="chrome-extension://afaihcdgkjebgabomemccdneglknjkdd/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Quran Tab is an islamic new tab page that will keep you inspired by a verse from Quran every time you open a new tab.">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="chrome-extension://afaihcdgkjebgabomemccdneglknjkdd/assets/manifest-B7MmuZG1.json">
+    <title>Quran Tab</title>
+    <script type="module" crossorigin="" src="chrome-extension://afaihcdgkjebgabomemccdneglknjkdd/assets/index.html-Be76zZqn.js"></script>
+    <link rel="stylesheet" crossorigin="" href="chrome-extension://afaihcdgkjebgabomemccdneglknjkdd/assets/index-BQRw1qPH.css">
+  <style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style><style data-emotion="css-global" data-s=""></style><style data-emotion="css-global" data-s=""></style><style data-emotion="css-global" data-s=""></style><style data-emotion="css" data-s=""></style><style data-emotion="css-global"></style></head>
+  <body class="chakra-ui-dark">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="app"><div class="App css-0" dir="ltr"><div class="Background css-1154l7a"></div><header class="Header"><div class="Header__section Header__section--right"><p class="chakra-text css-149stho" data-testid="gregorian-date-element" dir="auto">February 11, 2025</p><button type="button" class="chakra-button chakra-menu__menu-button css-1dtn6yq" data-testid="quick-links-button" id="menu-button-:r2:" aria-expanded="false" aria-haspopup="menu" aria-controls="menu-list-:r2:"><span class="css-xl71ch"><p class="chakra-text css-0" dir="auto">Quick Links</p></span></button><div class="css-r6z5ec" style="visibility: hidden; position: absolute; min-width: max-content; inset: 0px auto auto 0px;"><div class="chakra-menu__menu-list css-1kfu8nn" data-testid="quick-links-menu" tabindex="-1" role="menu" id="menu-list-:r2:" aria-orientation="vertical" style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0px);"></div></div></div><div class="Header__section Header__section--left"><button type="button" class="chakra-button chakra-menu__menu-button css-1dtn6yq" id="menu-button-:r6:" aria-expanded="false" aria-haspopup="menu" aria-controls="menu-list-:r6:"><span class="css-xl71ch"><p class="chakra-text css-0" dir="auto">Adhkar 🤲</p></span></button><div class="css-r6z5ec" style="visibility: hidden; position: absolute; min-width: max-content; inset: 0px auto auto 0px;"><div class="chakra-menu__menu-list css-1kfu8nn" tabindex="-1" role="menu" id="menu-list-:r6:" aria-orientation="vertical" style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0px);"></div></div><p class="chakra-text css-149stho" data-testid="hijri-date-element" dir="auto">Shaʻban 12, 1446 AH</p></div></header><div class="main"><div class="Clock element-has-ar" data-testid="clock-element"><p data-testid="clock-12-element" class="Clock__text">PM</p>6:21</div><div class="verseContent" dir="ltr"><div class="verseContent__text"><p class="chakra-text verseContent__text--ar css-0" dir="auto" data-testid="arabic-verse">ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ
+<button type="button" class="chakra-button css-1nlwyv4" aria-label="Copy verse" data-testid="copy-verse-button"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></span></button></p><p class="chakra-text css-0" dir="auto" data-testid="translated-verse">(3) The Entirely Merciful, the Especially Merciful,</p></div><div class="verseDetails__container css-1tyndxa"><button type="button" class="chakra-button css-1nlwyv4" data-testid="change-verse-button"><p class="chakra-text verseDetails--text css-9hpz1u" dir="auto"><span>Al-Faatiha(1:3)</span></p><span><div class="css-8az873"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="var(--color-light-opacity-70)" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light-opacity-70);"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path></svg></div></span></button></div><div class="verseContent__iconsContent"><button type="button" class="chakra-button css-1nlwyv4" aria-label="Add to favourites" data-hotkeys="favourite" data-testid="add-to-favourites-button"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Continuous Recitation Mode"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M11 5.466V4H5a4 4 0 0 0-3.584 5.777.5.5 0 1 1-.896.446A5 5 0 0 1 5 3h6V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192Zm3.81.086a.5.5 0 0 1 .67.225A5 5 0 0 1 11 13H5v1.466a.25.25 0 0 1-.41.192l-2.36-1.966a.25.25 0 0 1 0-.384l2.36-1.966a.25.25 0 0 1 .41.192V12h6a4 4 0 0 0 3.585-5.777.5.5 0 0 1 .225-.67Z"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Previous" data-hotkeys="previous" data-testid="previous-verse"><span><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M20 5v14l-12 -7z"></path><path d="M4 5l0 14"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Play/Pause Audio" data-hotkeys="play"><span><svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 448 512" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Next" data-hotkeys="next" data-testid="next-verse"><span><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 5v14l12 -7z"></path><path d="M20 5l0 14"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Translation"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path fill="none" d="M0 0h24v24H0z"></path><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7 1.62-4.33L19.12 17h-3.24z"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Tafseer" data-hotkeys="tafseer"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.495 4.495 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.752.752 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a2.996 2.996 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75Zm12.75 15.232a4.503 4.503 0 0 1 2.823-.971l6.927.047V4.5h-6.75a3 3 0 0 0-3 3ZM11.247 7.497a3 3 0 0 0-3-2.997H1.5V18h6.947c1.018 0 2.006.346 2.803.98Z"></path></svg></span></button><button type="button" class="chakra-button css-1nlwyv4" aria-label="Continue reading in Quran.com" data-testid="open-quran.com-button"><span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M1.5 1H6v1H2v12h12v-4h1v4.5l-.5.5h-13l-.5-.5v-13l.5-.5z"></path><path d="M15 1.5V8h-1V2.707L7.243 9.465l-.707-.708L13.293 2H8V1h6.5l.5.5z"></path></svg></span></button></div></div><div class="prayerTimes" data-testid="prayer-times"><ul class="prayerTimes__list element-has-ar css-0"><li class="prayerTimes__col"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="var(--color-light-opacity-70)" height="45" width="45" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light-opacity-70);"><path d="M0 480c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32V160H0v320zm579.16-192c17.86-17.39 28.84-37.34 28.84-58.91 0-52.86-41.79-93.79-87.92-122.9-41.94-26.47-80.63-57.77-111.96-96.22L400 0l-8.12 9.97c-31.33 38.45-70.01 69.76-111.96 96.22C233.79 135.3 192 176.23 192 229.09c0 21.57 10.98 41.52 28.84 58.91h358.32zM608 320H192c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h32v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h64v-72c0-48 48-72 48-72s48 24 48 72v72h64v-64c0-17.67 14.33-32 32-32s32 14.33 32 32v64h32c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM64 0S0 32 0 96v32h128V96c0-64-64-96-64-96z"></path></svg></li><li class="prayerTimes__col overlay" data-testid="fajr-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Fajr</p><p class="prayerTimes__value" data-testid="fajr-time">05:51 am</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="fajr-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li><li class="prayerTimes__col overlay" data-testid="sunrise-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Sunrise</p><p class="prayerTimes__value" data-testid="sunrise-time">07:16 am</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="sunrise-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li><li class="prayerTimes__col overlay" data-testid="dhuhr-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Dhuhr</p><p class="prayerTimes__value" data-testid="dhuhr-time">12:45 pm</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="dhuhr-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li><li class="prayerTimes__col overlay" data-testid="asr-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Asr</p><p class="prayerTimes__value" data-testid="asr-time">03:51 pm</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="asr-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li><li class="prayerTimes__col overlay" data-testid="maghrib-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Maghrib</p><p class="prayerTimes__value" data-testid="maghrib-time">06:14 pm</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="maghrib-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li><li class="prayerTimes__col overlay prayerTimes__col--active" data-testid="isha-data"><div class="prayerTimes__data"><p class="prayerTimes__title">Isha</p><p class="prayerTimes__value" data-testid="isha-time">07:44 pm</p></div><div class="prayerTimes__remaining"><p class="prayerTimes__title">Remaining</p><p class="prayerTimes__value" data-testid="isha-remaining-time">01:22</p></div><div class="prayerTimes__remainingLine" style="width: 92.0336%;"></div></li></ul><div class="prayerTimes__buttonsContent"><span><button type="button" class="chakra-button css-1nlwyv4" title="Mute Adhan sound"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="m21.707 20.293-2.023-2.023A9.566 9.566 0 0 0 21.999 12c0-4.091-2.472-7.453-5.999-9v2c2.387 1.386 3.999 4.047 3.999 7a8.113 8.113 0 0 1-1.672 4.913l-1.285-1.285C17.644 14.536 18 13.19 18 12c0-1.771-.775-3.9-2-5v7.586l-2-2V4a1 1 0 0 0-1.554-.832L7.727 6.313l-4.02-4.02-1.414 1.414 18 18 1.414-1.414zM12 5.868v4.718L9.169 7.755 12 5.868zM4 17h2.697l5.748 3.832a1.004 1.004 0 0 0 1.027.05A1 1 0 0 0 14 20v-1.879l-2-2v2.011l-4.445-2.964c-.025-.017-.056-.02-.082-.033a.986.986 0 0 0-.382-.116C7.059 15.016 7.032 15 7 15H4V9h.879L3.102 7.223A1.995 1.995 0 0 0 2 9v6c0 1.103.897 2 2 2z"></path></svg></button></span></div></div></div><footer class="footer"><div class="footer__section"><div class="settings"><button type="button" class="chakra-button css-d6eevf" aria-label="Settings" data-testid="settingsButton"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" focusable="false" height="30" width="30" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"></path></svg></button></div><button type="button" class="chakra-button css-d6eevf" data-testid="show-audio-menu-button" id="popover-trigger-:r12:" aria-haspopup="dialog" aria-expanded="false" aria-controls="popover-content-:r12:"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30" width="30" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg></button><div class="chakra-popover__popper css-1qq679y" data-popper-placement="top" style="visibility: hidden; min-width: max-content; --popper-transform-origin: bottom center; position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(0px, -56px);"><section id="popover-content-:r12:" tabindex="-1" role="dialog" class="chakra-popover__content css-j5h51i" style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.95) translateZ(0px);"></section></div></div><p class="chakra-text _sentence_18loc_1 css-0" data-testid="palestinian-cause" dir="auto"><span class="_date_18loc_21">76</span> years and <span class="_date_18loc_21">10</span> months since the occupation of <span class="_word_18loc_20">Palestine</span></p><div class="footer__section"><div class="favourites css-15jmcx3"><button type="button" class="chakra-button css-1nlwyv4" data-testid="favourites-menu"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30" width="30" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M4 2H20C20.5523 2 21 2.44772 21 3V22.2763C21 22.5525 20.7761 22.7764 20.5 22.7764C20.4298 22.7764 20.3604 22.7615 20.2963 22.7329L12 19.0313L3.70373 22.7329C3.45155 22.8455 3.15591 22.7322 3.04339 22.4801C3.01478 22.4159 3 22.3465 3 22.2763V3C3 2.44772 3.44772 2 4 2ZM19 19.9645V4H5V19.9645L12 16.8412L19 19.9645ZM12 13.5L9.06107 15.0451L9.62236 11.7725L7.24472 9.45492L10.5305 8.97746L12 6L13.4695 8.97746L16.7553 9.45492L14.3776 11.7725L14.9389 15.0451L12 13.5Z"></path></svg></button></div><div class="Contributors"><div class="Contributors__burst"><div class="lf-player-container"><div id="lottie" style="background: transparent; margin: 0px auto; outline: none; overflow: hidden; height: 40px; width: 300px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1125 207" width="1125" height="207" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"><defs><clippath id="__lottie_element_2"><rect width="1125" height="207" x="0" y="0"></rect></clippath><mask id="__lottie_element_4"><path fill="#ffffff" clip-rule="nonzero" d=" M578,91 C576.72802734375,90.20700073242188 575.4089965820312,89.98100280761719 574.1920166015625,89.81600189208984 C572.9749755859375,89.6510009765625 571.8610229492188,89.5479965209961 571,89 C570.6380004882812,88.76899719238281 570.5499877929688,87.93299865722656 570.4710083007812,87.072998046875 C570.3920288085938,86.21299743652344 570.322998046875,85.3280029296875 570,85 C569.7780151367188,84.77400207519531 569.176025390625,84.84400177001953 568.5560302734375,84.93599700927734 C567.9359741210938,85.02799987792969 567.2960205078125,85.14099884033203 567,85 C566.8049926757812,84.90699768066406 566.676025390625,84.45800018310547 566.5360107421875,84.00599670410156 C566.39599609375,83.55400085449219 566.2440185546875,83.0999984741211 566,83 C564.2960205078125,82.3010025024414 563.4829711914062,82.94100189208984 562.8770141601562,83.81099700927734 C562.27099609375,84.68099975585938 561.8729858398438,85.78099822998047 561,86 C561.1019897460938,85.9749984741211 560.4630126953125,85.64299774169922 559.6170043945312,85.35900115966797 C558.77099609375,85.07499694824219 557.719970703125,84.83799743652344 557,85 C554.31298828125,85.60600280761719 553.926025390625,86.71800231933594 553.7789916992188,87.24800109863281 C553.6320190429688,87.77799987792969 553.7249755859375,87.7249984741211 552,86 C550.1710205078125,84.1709976196289 549.2039794921875,84.94999694824219 548.427978515625,86.2969970703125 C547.6519775390625,87.64399719238281 547.0670166015625,89.55899810791016 546,90 C544.718994140625,90.52899932861328 542.7990112304688,89.60299682617188 540.9099731445312,89.00700378417969 C539.02099609375,88.41100311279297 537.1610107421875,88.14700317382812 536,90 C536.8400268554688,92.57499694824219 536.2440185546875,94.97699737548828 535.8610229492188,97.28399658203125 C535.47802734375,99.59200286865234 535.3079833984375,101.80400085449219 537,104 C535.8319702148438,104.16500091552734 534.7990112304688,104.46499633789062 533.8250122070312,104.8239974975586 C532.8510131835938,105.18299865722656 531.9349975585938,105.60099792480469 531,106 C531.8109741210938,108.35600280761719 533.14501953125,110.18800354003906 534.2349853515625,112.26499938964844 C535.3250122070312,114.34200286865234 536.1690063476562,116.66500091552734 536,120 C540.344970703125,120.677001953125 541.1090087890625,118.01200103759766 544,118 C550.9959716796875,117.97000122070312 556.176025390625,127.76499938964844 559,120 C561.0170288085938,114.45500183105469 560.4639892578125,120.27799987792969 564,118 C565.947021484375,116.74600219726562 565.8179931640625,111.7699966430664 569,109 C572.198974609375,106.21499633789062 574.5889892578125,107.625 578,105 C577.9099731445312,99.58499908447266 572.1309814453125,98.99400329589844 575,96 C576.5469970703125,94.38500213623047 577.7880249023438,93.4260025024414 578,91" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M526,100 C525.7410278320312,99.34600067138672 525.5910034179688,98.70999908447266 525.5070190429688,98.09700012207031 C525.4229736328125,97.48400115966797 525.405029296875,96.89399719238281 525.4110107421875,96.33499908447266 C525.4169921875,95.7760009765625 525.447998046875,95.24700164794922 525.4600219726562,94.75399780273438 C525.4719848632812,94.26100158691406 525.4650268554688,93.80500030517578 525.39697265625,93.39099884033203 C525.3289794921875,92.97699737548828 525.2009887695312,92.60600280761719 524.968994140625,92.28500366210938 C524.7369995117188,91.96399688720703 524.4019775390625,91.69100189208984 523.9210205078125,91.4749984741211 C523.4400024414062,91.25900268554688 522.8140258789062,91.0979995727539 522,91 C522.051025390625,92.03199768066406 522.0059814453125,93.16100311279297 521.989013671875,94.26100158691406 C521.9719848632812,95.36100006103516 521.9829711914062,96.43299865722656 522.1489868164062,97.3499984741211 C522.3150024414062,98.26699829101562 522.635009765625,99.03099822998047 523.2349853515625,99.51399993896484 C523.8350219726562,99.99700164794922 524.7150268554688,100.2020034790039 526,100" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M571,69 C570.39697265625,71.7300033569336 568.9630126953125,73.62999725341797 567.02197265625,75.02200317382812 C565.0809936523438,76.41400146484375 562.6320190429688,77.29900360107422 560,78 C560.9920043945312,80.34100341796875 562.708984375,81.95800018310547 563.9439697265625,84.05599975585938 C565.1790161132812,86.15399932861328 565.9329833984375,88.73300170898438 565,93 C569.176025390625,93.48699951171875 570.447998046875,90.09500122070312 573,90 C575.2210083007812,89.91699981689453 577.1290283203125,93.48600006103516 581,92 C582.3679809570312,88.2490005493164 579.406982421875,86.88800048828125 580,84 C580.041015625,83.802001953125 582.5020141601562,81.73899841308594 583,81 C584.2210083007812,79.18900299072266 585.385009765625,78.86900329589844 584,77 C580.8200073242188,74.89700317382812 578.656982421875,76.8550033569336 576,75 C574.7880249023438,74.15399932861328 574.5029907226562,66.95500183105469 571,69" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M525,89 C522.3829956054688,90.86599731445312 521.10400390625,93.38899993896484 518,94 C515.9149780273438,94.41000366210938 513.155029296875,91.2699966430664 511,94 C511.1289978027344,97.29000091552734 513.9539794921875,98.447998046875 513,101 C513.0609741210938,100.83699798583984 509.97198486328125,102.01699829101562 510,102 C509.20599365234375,102.47000122070312 508.2130126953125,103.87200164794922 507,104 C505.25201416015625,104.18499755859375 502.4410095214844,101.72899627685547 501,103 C503.0480041503906,108.28299713134766 501.135009765625,112.29499816894531 500,117 C507.8680114746094,115.13200378417969 508.17498779296875,120.82499694824219 513,122 C514.4199829101562,120.98799896240234 513.5609741210938,118.02899932861328 515,116 C515.6539916992188,115.0780029296875 523.0130004882812,111.05799865722656 522,111 C523.7739868164062,111.10199737548828 523.2750244140625,115.50399780273438 526,114 C528.2650146484375,111.49199676513672 526.3189697265625,109.66699981689453 528,107 C529.8779907226562,104.0199966430664 535.1060180664062,104.01100158691406 535,101 C534.9310302734375,99.05699920654297 533.0399780273438,100.61199951171875 531,99 C527.1480102539062,95.95500183105469 528.9769897460938,91.09600067138672 525,89" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M464,93 C461.1080017089844,92.43699645996094 460.114013671875,94.92900085449219 460,95 C458.7829895019531,95.76000213623047 458.61700439453125,96.56500244140625 456,97 C448.79400634765625,98.197998046875 448.5050048828125,93.08100128173828 445,96 C442.07501220703125,98.43599700927734 447.2120056152344,106.16899871826172 447,108 C446.9330139160156,108.5790023803711 444.239013671875,112.46700286865234 444,113 C443.1759948730469,114.83699798583984 440.8529968261719,116.81900024414062 443,119 C444.42498779296875,120.447998046875 451.80499267578125,118.61499786376953 453,119 C457.5429992675781,120.46199798583984 456.37200927734375,127.44999694824219 462,126 C466.114990234375,124.94000244140625 464.6759948730469,118.6050033569336 466,117 C468.68499755859375,113.74500274658203 475.83599853515625,115.25599670410156 476,110 C476.0710144042969,107.73600006103516 470.4700012207031,107.98699951171875 468,102 C466.4419860839844,98.2239990234375 468.135009765625,96.00900268554688 467,93 C466.68798828125,92.1729965209961 463.28900146484375,92.86100006103516 464,93" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M493,114 C492.8689880371094,115.53600311279297 492.4219970703125,116.75499725341797 491.72100830078125,117.72100067138672 C491.0199890136719,118.68699645996094 490.0679931640625,119.4010009765625 488.9259948730469,119.9260025024414 C487.78399658203125,120.45099639892578 486.4540100097656,120.78700256347656 485,121 C485.09698486328125,123.73600006103516 486.58599853515625,125.08100128173828 487.8059997558594,126.69400024414062 C489.0260009765625,128.3070068359375 489.97698974609375,130.19000244140625 489,134 C491.6109924316406,133.1739959716797 493.5459899902344,132.65499877929688 495.61199951171875,132.4770050048828 C497.677001953125,132.2989959716797 499.87298583984375,132.46200561523438 503,133 C501.70098876953125,130.08399963378906 501.98699951171875,128.0800018310547 502.7049865722656,126.18199920654297 C503.4230041503906,124.28399658203125 504.572998046875,122.49299621582031 505,120 C501.6809997558594,120.31900024414062 500.0469970703125,118.9530029296875 498.55999755859375,117.44000244140625 C497.072998046875,115.927001953125 495.73199462890625,114.26699829101562 493,114" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M470,122 C470.1109924316406,123.44400024414062 469.7900085449219,124.45600128173828 469.2149963378906,125.21499633789062 C468.6400146484375,125.9739990234375 467.81201171875,126.47899627685547 466.9079895019531,126.90799713134766 C466.0039978027344,127.33699798583984 465.02398681640625,127.69200134277344 464.1470031738281,128.1479949951172 C463.2699890136719,128.60400390625 462.4949951171875,129.16200256347656 462,130 C463.072998046875,131.25999450683594 464.32501220703125,132.34100341796875 465.1830139160156,133.8159942626953 C466.0409851074219,135.29100036621094 466.5050048828125,137.16099548339844 466,140 C467.3139953613281,140.4709930419922 469.364013671875,139.83900451660156 471.68499755859375,139.40499877929688 C474.0060119628906,138.9709930419922 476.5989990234375,138.73599243164062 479,140 C478.56500244140625,137.06500244140625 478.8190002441406,134.81900024414062 479.4289855957031,132.9290008544922 C480.03900146484375,131.03900146484375 481.0060119628906,129.5070037841797 482,128 C478.2139892578125,128.08999633789062 476.6029968261719,126.69499969482422 475.2430114746094,125.2249984741211 C473.88299560546875,123.75499725341797 472.7760009765625,122.20899963378906 470,122" fill-opacity="0"></path></mask><mask id="__lottie_element_7"><path fill="#ffffff" clip-rule="nonzero" d=" M590,92 C586.0900268554688,94.0459976196289 585.156005859375,92.16000366210938 584.916015625,89.45600128173828 C584.676025390625,86.75199890136719 585.1309814453125,83.22899627685547 584,82 C583.8460083007812,81.83300018310547 582.969970703125,81.5530014038086 582.0709838867188,81.33000183105469 C581.1719970703125,81.10700225830078 580.2479858398438,80.94100189208984 580,81 C579.85302734375,81.03500366210938 579.3820190429688,81.61199951171875 578.8079833984375,82.26699829101562 C578.2340087890625,82.9219970703125 577.5579833984375,83.65499877929688 577,84 C576.3070068359375,84.4280014038086 575.3800048828125,84.91000366210938 574.4650268554688,85.29399871826172 C573.5499877929688,85.6780014038086 572.64599609375,85.96399688720703 572,86 C571.208984375,86.04399871826172 569.9940185546875,85.4020004272461 568.583984375,84.81999969482422 C567.1740112304688,84.23799896240234 565.5700073242188,83.71600341796875 564,84 C563.2839965820312,84.12999725341797 563.0659790039062,84.71499633789062 562.8870239257812,85.35099792480469 C562.7080078125,85.98699951171875 562.5659790039062,86.6719970703125 562,87 C560.7529907226562,87.7239990234375 559.5579833984375,87.39199829101562 558.5230102539062,87.16999816894531 C557.4879760742188,86.947998046875 556.6119995117188,86.83699798583984 556,88 C555.8779907226562,90.12300109863281 556.531005859375,91.46900177001953 557.1389770507812,92.86100006103516 C557.7470092773438,94.25299835205078 558.3079833984375,95.69200134277344 558,98 C556.0399780273438,98.04000091552734 554.4810180664062,98.48100280761719 553.0659790039062,99.06600189208984 C551.6510009765625,99.6510009765625 550.3809814453125,100.38200378417969 549,101 C549.708984375,105.24400329589844 553.7990112304688,105.52400207519531 555,110 C555.260986328125,110.97100067138672 553.9669799804688,111.60800170898438 554,113 C554.3109741210938,125.99600219726562 563.7000122070312,111.05999755859375 567,117 C569.1209716796875,120.81800079345703 569.885009765625,116.60600280761719 572,118 C574.656005859375,119.7509994506836 574.2689819335938,123.2750015258789 577,124 C578.593017578125,124.4229965209961 579.333984375,123.2699966430664 580,123 C584.6199951171875,121.12699890136719 579.89501953125,125.51699829101562 582,126 C584.7960205078125,126.64199829101562 587.9959716796875,125.27799987792969 591,126 C594.3280029296875,126.80000305175781 595.177978515625,130.5469970703125 599,131 C601.8829956054688,128.1719970703125 599.3389892578125,124.86499786376953 601,122 C602.5189819335938,119.37999725341797 609.4390258789062,119.95999908447266 608,115 C606.9639892578125,112.11100006103516 603.3519897460938,114.34700012207031 601,110 C600.5260009765625,109.1240005493164 601.06298828125,105.21499633789062 600,104 C598.3079833984375,102.06500244140625 596.1019897460938,102.36699676513672 594,101 C589.9719848632812,98.37999725341797 588.2349853515625,96.39199829101562 590,92" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M599,114 C598.2979736328125,114.19400024414062 597.843017578125,114.51200103759766 597.593017578125,114.91699981689453 C597.343017578125,115.3219985961914 597.2990112304688,115.81300354003906 597.4210205078125,116.35299682617188 C597.5430297851562,116.89299774169922 597.8309936523438,117.4800033569336 598.2459716796875,118.0780029296875 C598.6610107421875,118.6760025024414 599.2030029296875,119.28399658203125 599.8309936523438,119.86299896240234 C600.458984375,120.44200134277344 601.1749877929688,120.99299621582031 601.93701171875,121.47699737548828 C602.698974609375,121.96099853515625 603.5089721679688,122.37999725341797 604.3259887695312,122.69200134277344 C605.1430053710938,123.00399780273438 605.968017578125,123.21199798583984 606.760009765625,123.2760009765625 C607.552001953125,123.33999633789062 608.31201171875,123.26100158691406 609,123 C608.75,122.43900299072266 608.4080200195312,121.78700256347656 607.9929809570312,121.09400177001953 C607.5780029296875,120.4010009765625 607.0910034179688,119.66899871826172 606.552978515625,118.94599914550781 C606.0150146484375,118.2229995727539 605.426025390625,117.51100158691406 604.8070068359375,116.85900115966797 C604.18798828125,116.20700073242188 603.5399780273438,115.61699676513672 602.8820190429688,115.13700103759766 C602.2239990234375,114.65699768066406 601.5579833984375,114.28900146484375 600.9039916992188,114.08300018310547 C600.25,113.87699890136719 599.6079711914062,113.83200073242188 599,114" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M648,126 C645.8060302734375,125.86000061035156 644.4879760742188,126.91300201416016 643.2529907226562,128.10000610351562 C642.0180053710938,129.28700256347656 640.864990234375,130.6060028076172 639,131 C637.697998046875,131.27499389648438 636.6160278320312,130.83200073242188 635.5260009765625,130.54200744628906 C634.4359741210938,130.2519989013672 633.3369750976562,130.11399841308594 632,131 C631.1699829101562,132.39199829101562 631.68798828125,133.7519989013672 632.405029296875,135.2100067138672 C633.1220092773438,136.66799926757812 634.0369873046875,138.2220001220703 634,140 C633.969970703125,141.44500732421875 633.2410278320312,142.57400512695312 632.6339721679688,143.7779998779297 C632.0269775390625,144.98199462890625 631.5419921875,146.25900268554688 632,148 C636.323974609375,148.48899841308594 638.1690063476562,147.2899932861328 641,148 C643.7109985351562,148.67999267578125 644.6699829101562,153.58799743652344 649,152 C648.1389770507812,143.80599975585938 655.0449829101562,143.3780059814453 657,138 C651.4970092773438,135.60899353027344 648.843994140625,132.10400390625 648,126" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M614,134 C612.5369873046875,135.51699829101562 611.1950073242188,136.2310028076172 610.6389770507812,136.95899963378906 C610.0830078125,137.68699645996094 610.3140258789062,138.42799377441406 612,140 C613.3519897460938,141.25999450683594 614.010009765625,141.7969970703125 614.3759765625,142.125 C614.7420043945312,142.4530029296875 614.8170166015625,142.57200622558594 615,143 C615.0599975585938,143.13800048828125 615.0070190429688,143.87100219726562 614.9660034179688,144.5780029296875 C614.9249877929688,145.28500366210938 614.8939819335938,145.96499633789062 615,146 C616.0460205078125,146.343994140625 616.9860229492188,145.74200439453125 617.9450073242188,144.97900390625 C618.9030151367188,144.21600341796875 619.8800048828125,143.29400634765625 621,143 C623.9810180664062,142.21800231933594 624.7119750976562,142.30599975585938 624.7080078125,141.92100524902344 C624.7039794921875,141.53599548339844 623.9630126953125,140.677001953125 624,138 C624.0280151367188,135.99200439453125 624.64599609375,134.74200439453125 624.822998046875,133.99400329589844 C625,133.24600219726562 624.7360229492188,133 623,133 C621.4010009765625,133 619.8170166015625,132.18600463867188 618.5499877929688,131.4040069580078 C617.2830200195312,130.6219940185547 616.3319702148438,129.8719940185547 616,130 C615.4600219726562,130.20799255371094 613.8070068359375,134.1999969482422 614,134" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M673,146 C671.7020263671875,144.89599609375 670.5999755859375,144.14999389648438 669.6240234375,143.42799377441406 C668.64697265625,142.70599365234375 667.7960205078125,142.0070037841797 667,141 C664.6420288085938,138.01699829101562 666.4849853515625,134.66200256347656 662,134 C661.7080078125,133.95700073242188 659.2470092773438,138.33399963378906 656,139 C653.4910278320312,139.51499938964844 652.6740112304688,138.6529998779297 649,139 C651.343994140625,145.80499267578125 652.031982421875,148.5279998779297 649,155 C651.6110229492188,157.62600708007812 654.2160034179688,154.4290008544922 657,155 C660.5230102539062,155.72300720214844 662.0989990234375,160.8280029296875 665,159 C665.89599609375,151.6840057373047 670.9609985351562,150.8159942626953 673,146" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M628,140 C627.614990234375,140.1479949951172 627.4990234375,140.74000549316406 627.4130249023438,141.37399291992188 C627.3270263671875,142.00799560546875 627.2689819335938,142.68499755859375 627,143 C625.5969848632812,144.64700317382812 624.4860229492188,144.46299743652344 623.781005859375,144.4600067138672 C623.0759887695312,144.45700073242188 622.7769775390625,144.63299560546875 623,147 C622.968017578125,146.66099548339844 623.552001953125,146.96600341796875 624.1010131835938,147.3280029296875 C624.6500244140625,147.69000244140625 625.166015625,148.11000061035156 625,148 C625.6890258789062,148.45700073242188 626.3759765625,149.6840057373047 626.9210205078125,150.80799865722656 C627.4660034179688,151.9320068359375 627.8709716796875,152.95399475097656 628,153 C627.6580200195312,152.87600708007812 629.9390258789062,152.33700561523438 632.291015625,151.84800720214844 C634.6430053710938,151.35899353027344 637.0640258789062,150.92100524902344 637,151 C636.8519897460938,151.18299865722656 637.0380249023438,141.0469970703125 637,141 C636.5020141601562,140.3780059814453 632.8480224609375,141.24200439453125 632,141 C631.7760009765625,140.93600463867188 631.3259887695312,139.15499877929688 631,139 C629.6160278320312,138.343994140625 628.4630126953125,139.82200622558594 628,140" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M673,170 C672.833984375,170.17100524902344 672.9180297851562,170.58599853515625 673.0009765625,171.0019989013672 C673.083984375,171.41700744628906 673.1680297851562,171.83200073242188 673,172 C672.926025390625,172.0749969482422 672.4329833984375,172.03500366210938 671.9550170898438,171.9969940185547 C671.4769897460938,171.95899963378906 671.0139770507812,171.92100524902344 671,172 C670.6010131835938,174.25 672.0989990234375,175.77000427246094 673.947998046875,176.46800231933594 C675.7969970703125,177.16600036621094 677.9959716796875,177.04100036621094 679,176 C679.7860107421875,175.1840057373047 677.8259887695312,173.04299926757812 678,172 C678.5759887695312,168.55299377441406 678.3389892578125,171.38800048828125 676,171 C673.77001953125,170.6300048828125 675.3920288085938,167.53399658203125 673,170" fill-opacity="0"></path></mask><mask id="__lottie_element_10"><path fill="#ffffff" clip-rule="nonzero" d=" M558,91 C554.8369750976562,92.50299835205078 555.8389892578125,98.1719970703125 553,100 C550.93798828125,99.72799682617188 552.7620239257812,95.5719985961914 550,96 C549.3090209960938,100.04100036621094 544.9310302734375,99.27100372314453 542,100 C539.6519775390625,100.58399963378906 539.7349853515625,102.22200012207031 538,102 C537.6480102539062,101.95500183105469 536.0659790039062,99.5510025024414 535,99 C533.2239990234375,98.08200073242188 532.197998046875,97.63899993896484 530,98 C527.375,101.36199951171875 530.2999877929688,104.10700225830078 529,107 C528.2570190429688,108.6520004272461 520.448974609375,110.60399627685547 522,114 C527.676025390625,115.99099731445312 532.10498046875,119.22899627685547 533,126 C538.0570068359375,126.68699645996094 538.6279907226562,120.9749984741211 541,120 C548.8729858398438,116.76499938964844 545.031005859375,124.76300048828125 549,126 C548.4819946289062,125.83899688720703 551.781005859375,124.03500366210938 553,124 C556.1859741210938,123.90799713134766 555.5850219726562,126.21399688720703 558,125 C555.2219848632812,119.87699890136719 559.468017578125,116.8219985961914 564,116 C567.0050048828125,115.45500183105469 570.7999877929688,118.9749984741211 573,116 C569.0679931640625,109.4469985961914 572.968017578125,104.74400329589844 574,98 C564.4099731445312,99.9229965209961 562.4810180664062,94.18599700927734 558,91" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M554,111 C550.6279907226562,113.42500305175781 553.0239868164062,116.40599822998047 551,119 C549.7050170898438,120.66000366210938 545.97802734375,120.51300048828125 544,122 C543.3720092773438,122.47200012207031 542.5709838867188,125.8489990234375 541,127 C541.0139770507812,126.98999786376953 536.9030151367188,128.33099365234375 537,128 C536.405029296875,130.031005859375 538.1409912109375,130.29100036621094 539,133 C540.3779907226562,137.3470001220703 538.8140258789062,138.38900756835938 542,137 C545.344970703125,135.54200744628906 547.1290283203125,138.37399291992188 549,138 C549.2849731445312,137.9429931640625 548.9299926757812,136.48500061035156 550,137 C551.1420288085938,137.5489959716797 549.4569702148438,139.20399475097656 552,139 C554.9879760742188,138.75999450683594 556.7470092773438,135.3699951171875 560,135 C563.7219848632812,134.57699584960938 564.6580200195312,137.3979949951172 568,136 C569.3140258789062,131.73300170898438 565.7680053710938,129.65199279785156 566,127 C566.239013671875,124.26899719238281 570.7969970703125,122.55699920654297 570,118 C560.593017578125,118.15399932861328 557.8880004882812,114.51300048828125 554,111" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M550,127 C549.1900024414062,131.56700134277344 545.3579711914062,138.01199340820312 541,137 C539.1589965820312,136.57200622558594 539.7789916992188,133.447998046875 537,133 C536.573974609375,133.94500732421875 536.2789916992188,135.6280059814453 534,137 C533.8480224609375,137.09100341796875 531.0009765625,137.99600219726562 531,138 C530.2340087890625,140.22999572753906 532.2969970703125,139.9969940185547 533,143 C534.406005859375,148.99899291992188 532.27001953125,146 538,146 C540.6530151367188,146 541.7949829101562,147.8679962158203 543,147 C543.822021484375,146.4080047607422 542.1500244140625,142.625 544,143 C546.7109985351562,145.28900146484375 545.8460083007812,151.1540069580078 548,154 C551.760009765625,153.54800415039062 553.3209838867188,150.552001953125 557,150 C559.4550170898438,149.6320037841797 562.3159790039062,152.41400146484375 565,150 C562.2009887695312,141.88099670410156 564.1710205078125,139.30599975585938 567,134 C562.72900390625,131.79800415039062 560.010986328125,133.61900329589844 557,132 C555.0419921875,130.94700622558594 553.6160278320312,125.41899871826172 550,127" fill-opacity="0"></path><path fill="#ffffff" clip-rule="nonzero" d=" M532,142 C531.2789916992188,142.14500427246094 530.7880249023438,142.76300048828125 530.3469848632812,143.41000366210938 C529.906005859375,144.0570068359375 529.5159912109375,144.73399353027344 529,145 C524.7739868164062,147.1699981689453 526.614990234375,146.3300018310547 528,150 C529.14697265625,153.04200744628906 527.4290161132812,153.83700561523438 530,155 C529.6179809570312,154.82699584960938 532.6859741210938,153.02000427246094 533,153 C533.7830200195312,152.94900512695312 535.6740112304688,155.1020050048828 537,154 C537.68701171875,153.4290008544922 536.6619873046875,149.906005859375 537,149 C537.0609741210938,148.83700561523438 538.8109741210938,148.18899536132812 539,148 C542.5079956054688,144.49200439453125 538.426025390625,147.06399536132812 535,145 C532.0070190429688,143.19700622558594 534.947998046875,141.406005859375 532,142" fill-opacity="0"></path></mask></defs><g clip-path="url(#__lottie_element_2)"><g mask="url(#__lottie_element_4)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><rect width="1125" height="207" fill="#ffd200"></rect></g><g mask="url(#__lottie_element_7)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><rect width="1125" height="207" fill="#ffd200"></rect></g><g mask="url(#__lottie_element_10)" transform="matrix(1,0,0,1,0,0)" opacity="1" style="display: block;"><rect width="1125" height="207" fill="#ffd200"></rect></g></g></svg></div></div></div><button type="button" class="chakra-button css-15i57ls" aria-label="glowing star" data-testid="contributors-button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" class="AboutMe__icon" aria-hidden="true" focusable="false" height="22" width="22" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-light1);"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg></button></div></div></footer></div><span id="__chakra_env" hidden=""></span></div>
+    <!-- standard way for adding entry point for vite -->
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+  
+
+<div class="chakra-portal"><div role="region" aria-live="polite" aria-label="Notifications-top" id="chakra-toast-manager-top" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto; top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-top-left" id="chakra-toast-manager-top-left" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; top: env(safe-area-inset-top, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-top-right" id="chakra-toast-manager-top-right" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom-left" id="chakra-toast-manager-bottom-left" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; bottom: env(safe-area-inset-bottom, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom" id="chakra-toast-manager-bottom" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; margin: 0px auto; bottom: env(safe-area-inset-bottom, 0px); right: env(safe-area-inset-right, 0px); left: env(safe-area-inset-left, 0px);"></div><div role="region" aria-live="polite" aria-label="Notifications-bottom-right" id="chakra-toast-manager-bottom-right" style="position: fixed; z-index: var(--toast-z-index, 5500); pointer-events: none; display: flex; flex-direction: column; bottom: env(safe-area-inset-bottom, 0px); right: env(safe-area-inset-right, 0px);"></div></div></body></html>

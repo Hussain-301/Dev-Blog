@@ -1,0 +1,14 @@
+
+
+<div class="article-card">
+    <img src="<%= article.img_url %>" alt="<%= article.title %>" onerror="this.style.display='none'" loading="lazy">
+    <div class="article-text">
+        <h3><%= article.title %></h3>
+        <p><%= article.description %></p>
+    </div>
+    <div class="article-btns">
+        <h4><%= article.author %></h4>
+        <a href="/articles/<%= article.id %>"><strong>View More</strong></a>
+    </div>
+</div>
+

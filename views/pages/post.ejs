@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="shortcut icon" href="<%= icon_path %>" type="image/x-icon">
+    <title>Dev Blog</title>
+</head>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <div class="creating-new-article">
+        <h2>Create a new article</h2>
+        <form action="/createNewArticle" method="POST" class="createNewArticleForm" enctype="multipart/form-data">
+            <input type="file" name="img_url" id="img_url" required accept="image/png, image/jpeg, image/jpg" > 
+            <label for="img_url" class="upload-btn">Upload your image</label>
+            <p class="file-name" id="file-name">No file chosen</p>
+    
+            <label for="title">Enter your article's title: </label>
+            <input type="text" name="title" placeholder="Article Title" required autocomplete="off" class="input" maxlength="25">
+    
+            <label for="description">Enter your article's description: </label>
+            <textarea name="description" id="" placeholder="Article Description" required autocomplete="off"></textarea class="input">
+    
+            <label for="author">Enter your name please: </label>
+            <input type="text" name="author" placeholder="Enter your name:" required autocomplete="off" class="input">
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>    
+    <%- include('../partials/footer.ejs') %>
+    <script>document.getElementById('img_url').addEventListener('change', function() {
+        let fileName = this.files[0] ? this.files[0].name : "No file chosen";
+        document.getElementById('file-name').textContent = fileName;
+    });
+    </script>
+</body>
+</html>
